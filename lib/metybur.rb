@@ -31,7 +31,7 @@ module Metybur
     end
     websocket.on(:close) do |event|
       middleware.inject(event) { |e, mw| mw.close(e) }
-      EM.stop_event_loop
+      # EM.stop_event_loop
     end
 
     connect_message = {
